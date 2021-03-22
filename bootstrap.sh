@@ -5,6 +5,9 @@ sudo pacman -Syy
 sudo pacman -S --needed git base-devel --noconfirm
 sudo pacman -S vim --noconfirm
 
+## Fonts
+sudo pacman -S noto-fonts
+
 ## System tools
 sudo pacman -S gparted --noconfirm
 
