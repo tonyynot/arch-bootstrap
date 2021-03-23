@@ -1,3 +1,5 @@
+### Big brain script to install arch packages. Might require some confirmations. #
+
 echo '༼ つ ◕_◕ ༽つ Updating your system. Go grab a drink, this may take a while.'
 
 ## Update packages
