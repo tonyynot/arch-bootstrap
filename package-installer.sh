@@ -26,12 +26,8 @@ sudo pacman -S libreoffice-still --noconfirm
 sudo pacman -S thunderbird --noconfirm
 sudo pacman -S virtualbox --noconfirm
 
-## Pull dotfiles repo
-sudo git clone https://github.com/tonyynot/dotfiles.git ~/.dotfiles
-
 ## Terminal Emulator with ZSH
-## *Imports custom alacritty terminal config from dotfiles directory
-sudo pacman -S alacritty --noconfirm && mkdir ~/.config/alacritty && mv ~/dotfiles/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+sudo pacman -S alacritty --noconfirm
 sudo pacman -S zsh zsh-completions --noconfirm
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 
@@ -74,6 +70,25 @@ yay -S autotiling
 yay -S skippy-xd-git
 sudo pacman -S feh --noconfirm
 
+
+echo "Installing dotfiles for you based configs, sir."
+
+# This script will automatically install configs
+git clone --bare https://github.com/tonyynot/dotfiles.git $HOME/.dotfiles
+function dotfiles {
+       /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME $@
+   }
+mkdir -p .dotfiles-backup
+dotfiles checkout
+if [ $? = 0 ]; then
+      echo "Checked out dotfiles.";
+        else
+                echo "Backing up pre-existing dot files.";
+            dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles-backup/{}
+                    fi;
+                    dotfiles checkout
+                    dotfiles config status.showUntrackedFiles no
+
 echo 'Package installation complete. Enjoy your system, King.'
 echo '
 ⊂_ヽ
@@ -91,4 +106,5 @@ echo '
 　| |　　) /
 ノ )　　Lﾉ
 (_／'
+
 
