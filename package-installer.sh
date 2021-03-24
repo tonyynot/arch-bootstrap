@@ -17,7 +17,7 @@ vim +PluginInstall +qall
 ## Fonts
 sudo pacman -S noto-fonts --noconfirm
 sudo pacman -S ttf-hack --noconfirm
-sudo pacman -s 
+sudo pacman -s ttf-fira-code --noconfirm
 sudo pacman -S noto-fonts-emoji --noconfirm
 
 ## System tools
@@ -58,6 +58,7 @@ sudo pacman -S xorg-xset xorg-xrandr --noconfirm
 ## Security / Privacy
 sudo pacman -S keepassxc --noconfirm
 sudo pacman -S nextcloud --noconfirm
+sudo pacman -S nextcloud-client --noconfirm
 sudo pacman -S openvpn --confirm
 
 ## Communication
@@ -72,7 +73,6 @@ sudo pacman -S i3wm && mkdir -p ~/.config/i3 && mv ~/dotfiles/.config/i3/config 
 yay -S autotiling
 yay -S skippy-xd-git
 sudo pacman -S feh --noconfirm
-
 
 echo "Installing dotfiles for you based configs, sir."
 
