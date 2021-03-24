@@ -3,7 +3,7 @@
 echo '༼ つ ◕_◕ ༽つ Updating your system. Go grab a drink, this may take a while.'
 
 ## Update packages
-sudo pacman -Syy
+sudo pacman -Syyu
 
 echo '༼ つ ͡° ͜ʖ ͡° ༽つ System update complete. Now installing your packages.'
 
@@ -12,10 +12,13 @@ sudo pacman -S --needed git base-devel --noconfirm
 sudo pacman -S stow --noconfirm
 sudo pacman -S vim --noconfirm
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
 ## Fonts
-sudo pacman -S noto-fonts
-sudo pacman -S noto-fonts-emoji
+sudo pacman -S noto-fonts --noconfirm
+sudo pacman -S ttf-hack --noconfirm
+sudo pacman -s 
+sudo pacman -S noto-fonts-emoji --noconfirm
 
 ## System tools
 sudo pacman -S gparted --noconfirim
@@ -49,7 +52,7 @@ git clone https://git.suckless.org/dmenu && cd dmenu && sudo make clean install 
 sudo pacman -S ranger --noconfirm
 sudo pacman -S pcmanfm --noconfirm
 
-## X utilities
+## X utilitieal
 sudo pacman -S xorg-xset xorg-xrandr --noconfirm
 
 ## Security / Privacy
@@ -61,7 +64,7 @@ sudo pacman -S openvpn --confirm
 sudo pacman -S discord --noconfirm
 sudo pacman -S telegram --noconfirm
 sudo pacman -S nicotine+ --noconfirm
-yay -S telegram-desktop-bin --noconfirm
+yay -S telegram-desktop-bin --noconfirm #This still has confirmation. Look into yay noconfirm tags
 
 ## i3WM Config
 ## *Imports custom config files from dotfiles directory
@@ -81,13 +84,13 @@ function dotfiles {
 mkdir -p .dotfiles-backup
 dotfiles checkout
 if [ $? = 0 ]; then
-      echo "Checked out dotfiles.";
-        else
-                echo "Backing up pre-existing dot files.";
-            dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles-backup/{}
-                    fi;
-                    dotfiles checkout
-                    dotfiles config status.showUntrackedFiles no
+	echo "Checked out dotfiles.";
+	else
+	echo "Backing up pre-existing dot files.";
+	dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .dotfiles-backup/{}
+fi;
+dotfiles checkout
+dotfiles config status.showUntrackedFiles no
 
 echo 'Package installation complete. Enjoy your system, King.'
 echo '
