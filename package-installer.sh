@@ -1,4 +1,4 @@
-### Big brain script to install arch packages. Might require some confirmations. #
+### Big brain script to install arch packages. #
 
 echo '༼ つ ◕_◕ ༽つ Updating your system. Go grab a drink, this may take a while.'
 
