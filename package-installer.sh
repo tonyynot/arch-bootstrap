@@ -9,10 +9,9 @@ echo '༼ つ ͡° ͜ʖ ͡° ༽つ System update complete. Now installing your 
 
 ## Developer tools
 sudo pacman -S --needed git base-devel --noconfirm
-sudo pacman -S stow --noconfirm
 sudo pacman -S vim --noconfirm
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+sudo vim +PluginInstall +qall
 
 ## Fonts
 sudo pacman -S noto-fonts --noconfirm
@@ -23,6 +22,8 @@ sudo pacman -S noto-fonts-emoji --noconfirm
 ## System tools
 sudo pacman -S gparted --noconfirim
 sudo pacman -S cmake --noconfirm
+sudo pacman -S neofetch --noconfirm
+sudo pacman -S picom --noconfirm:
 
 ## Productivity
 sudo pacman -S libreoffice-still --noconfirm
@@ -44,11 +45,12 @@ yay -S brave-bin
 sudo pacman -S vlc --noconfirm
 sudo pacman -S pulseaudio --noconfirm
 sudo pacman -S projectm --noconfirm
+sudo pacman -S qbittorrent --noconfirm
 
 ## Install Suckless software
 git clone https://git.suckless.org/dmenu && cd dmenu && sudo make clean install && cd ..
 
-## File Navigation
+## Fil  e Navigation
 sudo pacman -S ranger --noconfirm
 sudo pacman -S pcmanfm --noconfirm
 
