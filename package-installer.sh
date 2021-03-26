@@ -24,6 +24,8 @@ sudo pacman -S gparted --noconfirim
 sudo pacman -S cmake --noconfirm
 sudo pacman -S neofetch --noconfirm
 sudo pacman -S picom --noconfirm:
+sudo pacman -S lxappearance --noconfirm
+sudo pacman -S flameshot --noconfirm
 
 ## Productivity
 sudo pacman -S libreoffice-still --noconfirm
@@ -46,11 +48,12 @@ sudo pacman -S vlc --noconfirm
 sudo pacman -S pulseaudio --noconfirm
 sudo pacman -S projectm --noconfirm
 sudo pacman -S qbittorrent --noconfirm
+sudo pacman -S mpd mpc ncmpcpp --noconfirm
 
 ## Install Suckless software
 git clone https://git.suckless.org/dmenu && cd dmenu && sudo make clean install && cd ..
 
-## Fil  e Navigation
+## File Navigation
 sudo pacman -S ranger --noconfirm
 sudo pacman -S pcmanfm --noconfirm
 
