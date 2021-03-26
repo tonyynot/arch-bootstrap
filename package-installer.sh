@@ -10,8 +10,8 @@ echo '༼ つ ͡° ͜ʖ ͡° ༽つ System update complete. Now installing your 
 ## Developer tools
 sudo pacman -S --needed git base-devel --noconfirm
 sudo pacman -S vim --noconfirm
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-sudo vim +PluginInstall +qall
+git clone https://aur.archlinux.org/spaceship-prompt-git.git --depth=1
+cd spaceship-prompt-git &&  makepkg -si && cd .. && rm -Rf spaceship-prompt-git
 
 ## Fonts
 sudo pacman -S noto-fonts --noconfirm
@@ -65,6 +65,7 @@ sudo pacman -S keepassxc --noconfirm
 sudo pacman -S nextcloud --noconfirm
 sudo pacman -S nextcloud-client --noconfirm
 sudo pacman -S openvpn --confirm
+yay -S proton-vpn-cli-git
 
 ## Communication
 sudo pacman -S discord --noconfirm
@@ -74,7 +75,7 @@ yay -S telegram-desktop-bin --noconfirm #This still has confirmation. Look into 
 
 ## i3WM Config
 ## *Imports custom config files from dotfiles directory
-sudo pacman -S i3wm && mkdir -p ~/.config/i3 && mv ~/dotfiles/.config/i3/config ~/.config/i3/config 
+sudo pacman -S i3wm i3-gaps i3blocks i3status i3lock --noconfirm 
 yay -S autotiling
 yay -S skippy-xd-git
 sudo pacman -S feh --noconfirm
